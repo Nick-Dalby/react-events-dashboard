@@ -1,6 +1,8 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const Card = ({ event, index }) => {
+  const [colorScheme, setColorScheme] = useState()
+  
   const [ariaExpanded, setAriaExpanded] = useState(false)
 
   const { name, description, location, start, end, dateRange, link } = event
@@ -9,7 +11,10 @@ const Card = ({ event, index }) => {
 
   const colors = ['blue', 'indigo', 'amber', 'rose', 'pink']
 
-  const colorScheme = colors[getRandomNumBetween(0, colors.length - 1)]
+  useEffect(() => {
+    setColorScheme(colors[getRandomNumBetween(0, colors.length - 1)])
+  },[])
+
   
   const handleClick = () => {
     setAriaExpanded(!ariaExpanded)

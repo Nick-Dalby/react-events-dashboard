@@ -12,20 +12,21 @@ const HEADERS = {
 }
 
 export async function handler(event, context) {
-  
-  const finalUrl = `${BASEURL}${event.queryStringParameters.maxResults ? `&maxResults=${event.queryStringParameters.maxResults}` : ''}&key=${VITE_GOOGLE_CALENDAR_API_KEY}`
+  const finalUrl = `${BASEURL}${
+    event.queryStringParameters.maxResults
+      ? `&maxResults=${event.queryStringParameters.maxResults}`
+      : ''
+  }&key=${VITE_GOOGLE_CALENDAR_API_KEY}`
   try {
     if (event.httpMethod === 'GET') {
       return fetch(finalUrl)
         .then((response) => response.json())
         .then((data) => ({
           statusCode: 200,
-          // body: JSON.stringify(data.items, null, 2),
-          body: JSON.stringify(data),
-          HEADERS
-        }
-        ))
-      }
+          body: JSON.stringify(data.items, null, 2),
+          HEADERS,
+        }))
+    }
     return {
       statusCode: 401,
     }

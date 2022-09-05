@@ -79,7 +79,7 @@ const Main = ({ numberOfEvents }) => {
           `./.netlify/functions/calendarFetch?maxResults=${numberOfEvents}`
         )
         const data = await endpoint.json()
-        const processedEvents = data.items.map((e) => mapEventObject(e))
+        const processedEvents = data.map((e) => mapEventObject(e))
         setEventData(processedEvents)
         setLoading(false)
       } catch (error) {
