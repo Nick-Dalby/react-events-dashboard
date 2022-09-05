@@ -1,14 +1,6 @@
-[dev]
-  command = "npm run vite:start"
-  publish = "dist"
-  # We need another port for the application because Vite occupies the 3000.
-  port = 8080
-
 [build]
   functions = 'functions/'
-  command = "npm run vite:build"
-  publish = "dist"
+
 
 [functions]
-  # We are goint to use ES modules so we need esbuild to transpile the code.
   node_bundler = "esbuild"
