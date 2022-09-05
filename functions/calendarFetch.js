@@ -9,7 +9,7 @@ const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${VITE_CALENDA
 const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Methods': 'GET',
-  'Access-Control -Allow-Origin': '*',
+  'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Credentials': true,
 }
 
