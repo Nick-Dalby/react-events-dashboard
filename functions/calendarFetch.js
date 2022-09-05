@@ -12,10 +12,10 @@ const HEADERS = {
 }
 
 export async function handler(event, context) {
-  const finalUrl = `${BASEURL}${`&maxResults=9`
-    // event.queryStringParameters.maxResults
-    //   ? `&maxResults=${event.queryStringParameters.maxResults}`
-    //   : ''
+  const finalUrl = `${BASEURL}${
+    event.queryStringParameters.maxResults
+      ? `&maxResults=${event.queryStringParameters.maxResults}`
+      : ''
   }&key=${VITE_GOOGLE_CALENDAR_API_KEY}`
   try {
     if (event.httpMethod === 'GET') {
