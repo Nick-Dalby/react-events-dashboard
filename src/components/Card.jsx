@@ -14,8 +14,8 @@ const Card = () => {
             <div className="grid gap-1">
               <button className="text-gray-400 flex gap-1 items-center cursor-pointer" aria-expanded="false" aria-controls="details-1" id="btn-1">
                 <p className="pointer-events-none">see info</p>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4 pointer-events-none transition-transform">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-4 h-4 pointer-events-none transition-transform">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                 </svg>
               </button>
                 <div className="grid gap-1" id="details-1" aria-labelledby="btn-1">

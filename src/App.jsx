@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 
 function App() {
-  const [numberOfEvents, setNumberOfEvents] = useState(9)
+  const [numberOfEvents, setNumberOfEvents] = useState(3)
 
   const getNumberOfEvents = (num) => {
     setNumberOfEvents(num)
