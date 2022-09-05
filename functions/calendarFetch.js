@@ -14,13 +14,15 @@ const headers = {
 }
 
 export async function handler(event, context) {
-  const finalUrl = `${BASEURL}${
+  const finalUrl = `${BASEURL}&key=${VITE_GOOGLE_CALENDAR_API_KEY}${
     event.queryStringParameters.maxResults
       ? `&maxResults=${event.queryStringParameters.maxResults}`
       : ''
-  }&key=${VITE_GOOGLE_CALENDAR_API_KEY}`
+  }`
   try {
     if (event.httpMethod === 'GET') {
+    console.log(finalUrl);
+
       return fetch(finalUrl)
         .then((response) => response.json())
         .then((data) => ({
