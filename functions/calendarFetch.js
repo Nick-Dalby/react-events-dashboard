@@ -10,7 +10,6 @@ const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Methods': 'GET',
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Credentials': true,
 }
 
 export async function handler(event, context) {
