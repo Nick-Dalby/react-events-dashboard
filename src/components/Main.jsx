@@ -76,7 +76,7 @@ const Main = ({ numberOfEvents }) => {
     const loadEvents = async () => {
       try {
         const endpoint = await fetch(
-          `./.netlify/functions/calendarFetch?maxResults=${numberOfEvents}`
+          `/.netlify/functions/calendarFetch?maxResults=${numberOfEvents}`
         )
         const data = await endpoint.json()
         const processedEvents = data.map((e) => mapEventObject(e))
