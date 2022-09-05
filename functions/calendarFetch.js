@@ -26,7 +26,7 @@ export const handler = async (event, context) => {
         .then((data) => ({
           statusCode: 200,
           body: JSON.stringify(data.items, null, 2),
-          headers: JSON.stringify(headers),
+          headers: headers,
         }))
     }
     return {
