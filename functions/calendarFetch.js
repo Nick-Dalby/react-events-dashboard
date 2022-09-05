@@ -20,7 +20,8 @@ export async function handler(event, context) {
         .then((response) => response.json())
         .then((data) => ({
           statusCode: 200,
-          body: JSON.stringify(data.items, null, 2),
+          // body: JSON.stringify(data.items, null, 2),
+          body: JSON.stringify(data),
           HEADERS
         }
         ))
