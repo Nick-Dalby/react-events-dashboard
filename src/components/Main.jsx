@@ -76,7 +76,8 @@ const Main = ({ numberOfEvents }) => {
     const loadEvents = async () => {
       try {
         const endpoint = await fetch(
-          `/.netlify/functions/calendarFetch?maxResults=${numberOfEvents}`
+          //hard code the max amount to fetch on init
+          `/.netlify/functions/calendarFetch?maxResults=21`
         )
         const data = await endpoint.json()
         const processedEvents = data.map((e) => mapEventObject(e))
@@ -118,7 +119,8 @@ const Main = ({ numberOfEvents }) => {
         className="grid gap-4 md:gap-6 lg:gap-8 items-start grid-cols-cards"
         id="events-container"
       >
-        {eventData.map((event, index) => {
+        {/* slice the array by the silder value  to improve ui performance*/}
+        {eventData.slice(0, numberOfEvents).map((event, index) => {
           return <Card event={event} key={index} index={index}/>
         })}
       </section>
