@@ -1,4 +1,3 @@
-import { data } from 'autoprefixer'
 import fetch from 'node-fetch'
 
 const { VITE_GOOGLE_CALENDAR_API_KEY, VITE_CALENDAR_ID } = process.env
@@ -14,7 +13,7 @@ const headers = {
   'Access-Control-Allow-Credentials': 'true',
 }
 
-const handler = async (event, context) => {
+export const handler = async (event, context) => {
   const finalUrl = `${BASEURL}&key=${VITE_GOOGLE_CALENDAR_API_KEY}${
     event.queryStringParameters.maxResults
       ? `&maxResults=${event.queryStringParameters.maxResults}`
@@ -41,5 +40,3 @@ const handler = async (event, context) => {
     }
   }
 }
-
-module.exports = { handler }
