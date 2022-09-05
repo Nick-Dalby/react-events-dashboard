@@ -6,9 +6,11 @@ const BASEPARAMS = `orderBy=startTime&singleEvents=true&timeMin=${new Date().toI
 const BASEURL = `https://www.googleapis.com/calendar/v3/calendars/${VITE_CALENDAR_ID}/events?${BASEPARAMS}
 `
 
-const HEADERS = {
+const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Methods': 'GET',
+  'Access-Control -Allow-Origin': '*',
+  'Access-Control-Allow-Credentials': true,
 }
 
 export async function handler(event, context) {
@@ -24,7 +26,7 @@ export async function handler(event, context) {
         .then((data) => ({
           statusCode: 200,
           body: JSON.stringify(data.items, null, 2),
-          HEADERS,
+          headers: JSON.stringify(headers),
         }))
     }
     return {
