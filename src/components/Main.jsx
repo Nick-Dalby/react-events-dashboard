@@ -103,8 +103,8 @@ const Main = ({ numberOfEvents }) => {
 
       <div className="flex gap-3 items-center text-blue-500 mx-auto h-10 mt-10">
       <svg className="h-16 w-16 width='20' animate-spin"viewBox="0 0 155 155" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle className="opacity-25" cx="77.5" cy="77.5" r="60" stroke="currentColor" stroke-width="15"/>
-        <path className="opacity-75" d="M120.329 35.48a59.998 59.998 0 0 1 6.712 75.868" stroke="currentColor" stroke-width="15"/>
+        <circle className="opacity-25" cx="77.5" cy="77.5" r="60" stroke="currentColor" strokeWidth="15"/>
+        <path className="opacity-75" d="M120.329 35.48a59.998 59.998 0 0 1 6.712 75.868" stroke="currentColor" strokeWidth="15"/>
       </svg>
       <p className='text-center text-3xl animate-pulse'>Loading Events...</p>
     </div>
